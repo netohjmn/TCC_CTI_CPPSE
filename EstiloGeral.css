@@ -1,0 +1,143 @@
+/* Base cores */
+:root {
+  --amarelo: #ffd93b;
+  --amarelo-escuro: #d9b700;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza: #d1d1d1;
+  --grafite: #4a4a4a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--grafite);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topo {
+  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
+  color: var(--grafite);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.topo h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+  letter-spacing: 0.03em;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: #222;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.conteudo {
+  max-width: 1024px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+.sobre,
+.beneficios,
+.contato {
+  background: var(--branco);
+  border: 1px solid var(--cinza);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 22px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sobre h2,
+.beneficios h2,
+.contato h2 {
+  color: var(--amarelo-escuro);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.sobre p,
+.beneficios ul,
+.contato p {
+  color: #444;
+  font-size: 1rem;
+}
+
+.beneficios ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.beneficios li {
+  background: #fff7c5;
+  border: 1px solid #f3d95f;
+  border-radius: 7px;
+  padding: 10px 13px;
+  color: #4d4d4d;
+}
+
+.rodape {
+  text-align: center;
+  padding: 14px 12px;
+  background: var(--cinza);
+  color: #333;
+  font-size: 0.92rem;
+  border-top: 2px solid var(--amarelo);
+  /* se quiser footer sempre visível, use posição fixa:
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     z-index: 10;
+  */
+}
+
+@media (min-width: 768px) {
+  .conteudo {
+    padding: 0 30px;
+  }
+
+  .sobre,
+  .beneficios,
+  .contato {
+    padding: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .beneficios ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topo h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+}
